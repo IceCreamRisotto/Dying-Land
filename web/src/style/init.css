@@ -1,0 +1,16 @@
+html {
+  font-size: 10vw; }
+
+body {
+  overflow-x: hidden;
+  margin: 0; }
+
+a:link, a:visited, a:hover, a:active {
+  color: unset;
+  text-decoration: none; }
+
+ul, li, h1, h2, h3, h4 {
+  margin: 0;
+  padding: 0; }
+
+/*# sourceMappingURL=init.css.map */

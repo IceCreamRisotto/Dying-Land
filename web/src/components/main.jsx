@@ -6,8 +6,8 @@ import ContentCharacter from './content/content_character.jsx';
 import ContentIntroduction from './content/content_introduction.jsx';
 import ContentMaterial from './content/content_material.jsx';
 class Main extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             navarr: [
                 {
@@ -26,13 +26,17 @@ class Main extends Component {
             ]
         };
     }
-    urlChange = () => {
-        console.log('url改了');
+    changeAppState=()=>{
+        this.props.changeAppState({
+            header:true,
+            main:false
+        })
     }
     render() {
         return (
             <Router>
                 <main>
+                <button className="go-banner-btn" onClick={this.changeAppState}>{'<<<回首頁'}</button>
                     <Nav
                         navarr={this.state.navarr}
                     />

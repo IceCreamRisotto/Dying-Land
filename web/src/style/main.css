@@ -1,0 +1,29 @@
+main {
+  display: flex;
+  padding: 0px 10%; }
+  main .nav-wrap, main .content-wrap {
+    flex-grow: 1;
+    background: skyblue; }
+  main .nav-wrap {
+    display: flex;
+    flex-direction: column; }
+  main .nav, main .content {
+    border: 1px solid; }
+  main .content {
+    text-align: center;
+    background: gray; }
+  main .go-banner-btn {
+    position: absolute;
+    left: 0;
+    top: 0;
+    border: 0;
+    outline: 0;
+    font-size: 0.1rem; }
+
+@media screen and (max-width: 1024px) {
+  main {
+    flex-direction: column; }
+    main .nav-wrap {
+      flex-direction: row; } }
+
+/*# sourceMappingURL=main.css.map */

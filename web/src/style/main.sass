@@ -1,0 +1,26 @@
+main
+    display: flex
+    padding: 0px 10%
+    & .nav-wrap,& .content-wrap
+        flex-grow: 1
+        background: skyblue
+    & .nav-wrap
+        display: flex
+        flex-direction: column
+    & .nav,& .content
+        border: 1px solid
+    & .content
+        text-align: center
+        background: gray
+    & .go-banner-btn
+        position: absolute
+        left: 0
+        top: 0
+        border: 0
+        outline: 0
+        font-size: 0.1rem
+@media screen and (max-width: 1024px)
+    main
+        flex-direction: column
+        & .nav-wrap
+            flex-direction: row
