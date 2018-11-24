@@ -27,30 +27,39 @@
     & .go-main-btn,.dl-btn,.video-btn
         position: absolute
         bottom: 0
-        box-sizing: border-box
         margin-bottom: 15px
         border-radius: 50%
+        border: 2px solid
+        padding: 1px
         background: rgba(0,0,0,0.7)
         width: 0.5rem
-        min-width: 70.5px
         height: 0.5rem
-        min-height: 70.5px
-        line-height: 50px
+        line-height: 0.5rem
         text-align: center
         color: #fff
         white-space: nowrap
         outline: none
-        transition: border .5s
+        transition: border .5s ,background .3s, color .3s
+        font-size: 0.1rem
         &:hover
             cursor: pointer
-            border-radius: 0%
-            border: 10px solid white
+            border-color: transparent
+            background-color: rgba(255,255,255,.8)
+            color: black
+            font-weight: 900
     & .dl-btn
         left: 75vw
     & .go-main-btn
         left: 50vw
     & .video-btn
         left: 25vw
+@media screen and (max-width: 1300px)
+    .header .go-main-btn,
+    .header .dl-btn,
+    .header .video-btn
+        width: 70.5px
+        height: 70.5px
+        line-height: 70.5px
 @media screen and (max-width: 1000px)
     .header .banner-image h1
         writing-mode: vertical-lr
