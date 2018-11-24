@@ -12,15 +12,15 @@ class Main extends Component {
             navarr: [
                 {
                     name: '角色',
-                    link: '/character',
+                    link: window.location.href.indexOf('https')?'/character':window.location.href+'/character',
                     component: ContentCharacter
                 }, {
                     name: '介紹',
-                    link: '/introduction',
+                    link: window.location.href.indexOf('https')?'/introduction':window.location.href+'/introduction',
                     component: ContentIntroduction
                 }, {
                     name: '素材',
-                    link: '/material',
+                    link: window.location.href.indexOf('https')?'/material':window.location.href+'/material',
                     component: ContentMaterial
                 }
             ]
@@ -34,17 +34,19 @@ class Main extends Component {
     }
     render() {
         return (
-            <Router>
-                <main>
-                <button className="go-banner-btn" onClick={this.changeAppState}>{'<<<回首頁'}</button>
-                    <Nav
-                        navarr={this.state.navarr}
-                    />
-                    <Content
-                        navarr={this.state.navarr}
-                    />
-                </main>
-            </Router>
+            <main>
+                <Link to='/'className="go-banner-btn">{'<<<回首頁'}</Link>
+                <Router>
+                    <div>
+                        <Nav
+                            navarr={this.state.navarr}
+                        />
+                        <Content
+                            navarr={this.state.navarr}
+                        />
+                    </div>
+                </Router>
+            </main>
         );
     }
 }
