@@ -6,41 +6,47 @@ import ContentCharacter from './content/content_character.jsx';
 import ContentIntroduction from './content/content_introduction.jsx';
 import ContentMaterial from './content/content_material.jsx';
 class Main extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             navarr: [
                 {
                     name: '角色',
-                    link: '/character',
+                    link: window.location.href.indexOf('https')?'/character':window.location.href+'/character',
                     component: ContentCharacter
                 }, {
                     name: '介紹',
-                    link: '/introduction',
+                    link: window.location.href.indexOf('https')?'/introduction':window.location.href+'/introduction',
                     component: ContentIntroduction
                 }, {
                     name: '素材',
-                    link: '/material',
+                    link: window.location.href.indexOf('https')?'/material':window.location.href+'/material',
                     component: ContentMaterial
                 }
             ]
         };
     }
-    urlChange = () => {
-        console.log('url改了');
+    changeAppState=()=>{
+        this.props.changeAppState({
+            header:true,
+            main:false
+        })
     }
     render() {
         return (
-            <Router>
-                <main>
-                    <Nav
-                        navarr={this.state.navarr}
-                    />
-                    <Content
-                        navarr={this.state.navarr}
-                    />
-                </main>
-            </Router>
+            <main>
+                <Link to='/'className="go-banner-btn">{'<<<回首頁'}</Link>
+                <Router>
+                    <div>
+                        <Nav
+                            navarr={this.state.navarr}
+                        />
+                        <Content
+                            navarr={this.state.navarr}
+                        />
+                    </div>
+                </Router>
+            </main>
         );
     }
 }
